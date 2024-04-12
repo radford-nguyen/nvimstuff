@@ -1,5 +1,4 @@
-require("rad.remap")
-print("hello from rad")
+require('rad.remap')
 
 vim.cmd('set nowrap ts=4 sw=4 et')
 

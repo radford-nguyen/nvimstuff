@@ -1,2 +1,2 @@
 require("rad")
-print("hello")
+require('lualine').setup()
