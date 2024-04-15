@@ -1,4 +1,5 @@
 require('rad.remap')
+require('rad.autocomplete')
 
 vim.cmd('set nowrap ts=4 sw=4 et')
 
