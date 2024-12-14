@@ -8,3 +8,4 @@ vim.keymap.set('n', '<leader><space>', vim.cmd.noh, {})
 -- format json
 --vim.keymap.set('n', '<leader>j', vim.cmd("'<,'>!python -m json.tool"))
 --vim.keymap.set('v', '<leader>j', vim.cmd("'<,'>!python -m json.tool"))
+
