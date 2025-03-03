@@ -1,3 +1,4 @@
+require('rad.lazy')
 require('rad.remap')
 require('rad.autocomplete')
 

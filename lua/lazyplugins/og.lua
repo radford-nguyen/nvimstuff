@@ -1,42 +1,41 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+-- my OG plugins from before the packer->lazy.nvim migration
+local plugins = {
+    {
+        'nvim-telescope/telescope.nvim', version = '0.1.6',
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    use({
+    {
         'rose-pine/neovim',
-        as = 'rose-pine',
+        name = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
-    })
+    },
 
-    use({
+    {
         'ellisonleao/gruvbox.nvim',
-        as = 'gruvbox',
+        name = 'gruvbox',
         config = function()
             vim.cmd('colorscheme gruvbox')
         end
-    })
+    },
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate'
+    },
 
-    --use('theprimeagen/harpoon')
-    --use('mbbill/undotree')
-    use('tpope/vim-fugitive')
+    'nvim-treesitter/playground',
 
-    use {
+    --'theprimeagen/harpoon',
+    --'mbbill/undotree',
+    'tpope/vim-fugitive',
+
+    {
         'VonHeikemen/lsp-zero.nvim',
-        requires = {
+        dependencies = {
             -- LSP support
             { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
@@ -52,10 +51,12 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
-    }
+    },
 
-    use {
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-end)
+}
+
+return plugins
