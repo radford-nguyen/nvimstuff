@@ -22,7 +22,7 @@ cmp.setup({
    },
    formatting = {
       format = function(_, vim_item)
-         vim.cmd("packadd lspkind-nvim")
+         --vim.cmd("packadd lspkind-nvim")
          vim_item.kind = require("lspkind").presets.codicons[vim_item.kind]
          .. "  "
          .. vim_item.kind
