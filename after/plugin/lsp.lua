@@ -24,13 +24,28 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+      local lspconfig = require('lspconfig')
+      lspconfig.lua_ls.setup(lua_opts)
+      lspconfig.pylsp.setup{
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = {'W391'},
+                maxLineLength = 100
+              }
+            }
+          }
+        }
+      }
     end,
   }
 })
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local lspkind = require('lspkind')
+lspkind.init({})
 
 -- this is the function that loads the extra snippets to luasnip
 -- from rafamadriz/friendly-snippets
@@ -52,3 +67,4 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
+
