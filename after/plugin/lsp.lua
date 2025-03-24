@@ -26,12 +26,19 @@ require('mason-lspconfig').setup({
       local lua_opts = lsp_zero.nvim_lua_ls()
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup(lua_opts)
+    end,
+    pylsp = function()
+      local lspconfig = require('lspconfig')
       lspconfig.pylsp.setup{
         settings = {
           pylsp = {
             plugins = {
               pycodestyle = {
-                ignore = {'W391'},
+                ignore = {
+                    'W391',
+                    'E126',
+                    'E123',
+                },
                 maxLineLength = 100
               }
             }
