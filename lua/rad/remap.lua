@@ -74,3 +74,13 @@ end,
 vim.keymap.set("n", "<leader>test", function()
     vim.fn.chansend(job_id, { "ls -la\r\n" })
 end)
+
+-- window movement
+vim.keymap.set("n", "<space>wh", "<C-w>h")
+vim.keymap.set("n", "<space>wj", "<C-w>j")
+vim.keymap.set("n", "<space>wk", "<C-w>k")
+vim.keymap.set("n", "<space>wl", "<C-w>l")
+vim.keymap.set("n", "<space>wH", "<C-w>H")
+vim.keymap.set("n", "<space>wJ", "<C-w>J")
+vim.keymap.set("n", "<space>wK", "<C-w>K")
+vim.keymap.set("n", "<space>wL", "<C-w>L")
