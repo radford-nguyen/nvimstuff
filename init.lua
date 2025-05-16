@@ -1,2 +1,2 @@
-require("rad")
+require('rad')
 require('lualine').setup()
