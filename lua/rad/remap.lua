@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>bs", vim.cmd.buffers, { desc = "show [b]uffer[s]" }
 
 vim.keymap.set("n", "<leader><space>", vim.cmd.noh, { desc = "clear highlighting" })
 
-fmtjson = function()
+local fmtjson = function()
     vim.cmd("'<,'>!python -m json.tool")
 end
 vim.keymap.set("n", "<leader>j", fmtjson, { desc = "format json (selection)" })

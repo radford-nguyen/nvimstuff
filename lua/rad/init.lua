@@ -1,6 +1,7 @@
 --[[ Reminders:
 --
 -- <C-R> ${reg} => paste from register ${reg}.  Works in mode[v,c]
+-- gc to comment code in visual mode (is nvim built-in now)
 --
 --]]
 require('rad.lazy')
