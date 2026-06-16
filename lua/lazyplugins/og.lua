@@ -27,7 +27,9 @@ local plugins = {
         build = ':TSUpdate'
     },
 
-    'nvim-treesitter/playground',
+    -- apparently integrated into neovim now
+    -- TODO: verify
+    -- 'nvim-treesitter/playground',
 
     --'theprimeagen/harpoon',
     --'mbbill/undotree',
