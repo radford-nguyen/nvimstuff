@@ -10,7 +10,7 @@ My neovim rc journey which started with ThePrimeagen's
 > this config now relies on lazy.nvim instead of packer.
 
 > [!Important]
-> neovim 0.10.0+ required
+> neovim [0.10.0, 0.12.0) required
 
 
 Installation
